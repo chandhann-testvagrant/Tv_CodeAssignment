@@ -1,21 +1,43 @@
 package executor;
 
-import generic.Constants;
-import org.json.JSONArray;
-import org.json.JSONObject;
-import org.testng.Assert;
-import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
-import pom.SearchResultPage;
-import pom.WelcomePage;
-import utils.BaseTest;
 
-public class executor extends BaseTest
+import model.product;
+import org.testng.annotations.Test;
+import pom.homePage;
+import pom.productPage;
+import pom.welcomePage;
+import utils.baseTest;
+import utils.builder.productBuilder;
+
+
+public class executor extends baseTest
 {
     @Test
-    public void validatingUiWithAPI()
-    {
     
+    public void validatingSearch() {
+        homePage home_page= new welcomePage(driver)
+                .enterPassword(password);
+    
+    
+        productPage product_page=home_page.search("RoundNeck Shirt 14")
+                //.verifySearchResult()
+                .openFirstResult()
+                .clickOnAddToCart();
+        
+        product product= new productBuilder(driver)
+                .autoBuildProduct();
+    
+        product_page.tabClickOnCart()
+                .increaseQuantityOfFirstProductByone()
+                .verifyProductDetailofFirst(product)
+                .verifyTotalPrice()
+                .tabClickOnHome()
+                .scrollToFeaturedCollection()
+                .openFirstFeaturedProduct();
+        
+       
+        
+        
 
     }
 

@@ -9,11 +9,10 @@ buildscript {
 
 plugins {
     id 'java'
-}
-
-plugins {
     id 'io.qameta.allure' version "2.8.1"
 }
+
+
 
 group 'org.assignment'
 version '1.0-SNAPSHOT'
@@ -36,6 +35,11 @@ dependencies {
     compile group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '3.8.1'
 // https://mvnrepository.com/artifact/io.qameta.allure/allure-generator
     runtime group: 'io.qameta.allure', name: 'allure-generator', version: '2.8.1'
+ //   implementation 'org.testng:testng:6.9.6'
+
+
+    implementation 'com.testvagrant.optimuscloud:testng-dashboard:1.0.0'
+    implementation 'com.testvagrant.optimuscloud:java-client:1.0.0'
 
 
 }
@@ -43,11 +47,11 @@ dependencies {
 
 
 
-test {
+task runTests(type: Test)  {
 
 
     outputs.upToDateWhen {false}
-    System.setProperty("browserType","Chrome")
+    systemProperty "browserType", System.getProperty("browserType")
     useTestNG() {
         include 'executor/executor/**'
         testLogging.showStandardStreams = true
@@ -59,6 +63,7 @@ test {
 
     }
 }
+
 
 
 

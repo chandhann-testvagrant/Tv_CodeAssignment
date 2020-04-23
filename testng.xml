@@ -6,6 +6,11 @@
 
 
 
+    <test name = "exampletest1">
+        <classes>
+            <class name = "executor.executor" />
+        </classes>
+    </test>
 
 
 </suite>

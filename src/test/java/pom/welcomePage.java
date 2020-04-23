@@ -4,11 +4,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import utils.BasicActions;
 
-public class WelcomePage extends BasicActions
+public class welcomePage extends tabActions
 {
-    public WelcomePage(WebDriver driver)
+    public welcomePage(WebDriver driver)
     {
         super(driver);
         PageFactory.initElements(driver,this);
@@ -18,12 +17,12 @@ public class WelcomePage extends BasicActions
     @FindBy(xpath = "//*[@id='login_form']/div/span/button") WebElement enterButton;
    
 
-    public void enterPassword(String password)
+    public homePage enterPassword(String password)
     {
         click(enterYourPasswordButton);
         type(passwordField,password);
         click(enterButton);
-
+        return new homePage(getDriverInstance());
     }
 
 

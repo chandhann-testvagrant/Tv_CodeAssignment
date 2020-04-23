@@ -1,6 +1,6 @@
 package utils;
 
-import generic.Constants;
+import generic.constants;
 import io.github.bonigarcia.wdm.DriverManagerType;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -11,16 +11,14 @@ import org.testng.annotations.BeforeSuite;
 
 import java.util.concurrent.TimeUnit;
 
-public class BaseTest extends Constants
+public class baseTest extends constants
 {
     protected WebDriver driver ;
     @BeforeSuite
     public void configuration()
     {
         String bType=System.getProperty("browserType");
-        
-        System.out.println("df"+bType);
-        
+        if(bType==null){bType="chrome";}
         switch (bType.toLowerCase()){
             case "chrome":
                 WebDriverManager.getInstance(DriverManagerType.CHROME).setup();
@@ -30,8 +28,11 @@ public class BaseTest extends Constants
                 WebDriverManager.getInstance(DriverManagerType.FIREFOX).setup();
                 driver = new FirefoxDriver();
                 break;
-            
                 
+            default:
+                WebDriverManager.getInstance(DriverManagerType.CHROME).setup();
+                driver = new ChromeDriver();
+                break;
         }
         
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
