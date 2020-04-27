@@ -4,7 +4,10 @@ import model.product;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
 
 public class cartPage extends tabActions
 {
@@ -17,42 +20,59 @@ public class cartPage extends tabActions
     
     
     
-    @FindBy(xpath = "//tr[@class='cart__row']//td[3]//input") private WebElement quantityOfFirstItem;
-    @FindBy(xpath = "//tr[@class='cart__row']//td[4]/div/span") private WebElement totalPriceOfFirstItem;
-    @FindBy(xpath = "//tr[@class='cart__row']//td[2]//div[@data-cart-item-regular-price-group='']//dd") private WebElement priceOfFirstItem;
-    @FindBy(xpath = "//tr[@class='cart__row']//td[1]//li[1]") private WebElement colourOfFirstItem;
-    @FindBy(xpath = "//tr[@class='cart__row']//td[1]//li[2]") private WebElement sizeOfFirstItem;
-    @FindBy(xpath = "//tr[@class='cart__row']//td[1]//div/a") private WebElement nameOfFirstItem;
+    @FindBys(@FindBy(xpath = "//tr[@class='cart__row']//td[3]//input")) private List<WebElement> quantityOfItemList;
+    @FindBys (@FindBy(xpath = "//tr[@class='cart__row']//td[4]/div/span"))  private List<WebElement> totalPriceOfItemList;
+    @FindBys (@FindBy(xpath = "//tr[@class='cart__row']//td[2]//div[@data-cart-item-regular-price-group='']//dd"))  private List<WebElement> priceOfItemList;
+    @FindBys(@FindBy(xpath = "//tr[@class='cart__row']//td[1]//li[1]")) private List<WebElement> colourOfItemList;
+    @FindBys({@FindBy(xpath = "//tr[@class='cart__row']//td[1]//li[2]")})    private List<WebElement> sizeOfItemList;
+    @FindBys({@FindBy(xpath = "//tr[@class='cart__row']//td[1]//div/a")})    private List<WebElement> nameOfItemList;
     
    
     
-    public cartPage increaseQuantityOfFirstProductByone()
+    public cartPage increaseQuantityOfProductByone(product product)
     {
-        int quantity=Integer.valueOf(getValue(quantityOfFirstItem));
-        quantity++;
-        type(quantityOfFirstItem,quantity+"");
-        sleep(1000);
-        click(totalPriceOfFirstItem);
+        int i=0;
+        for(WebElement name:nameOfItemList)
+        {
+            if(getText(name).equalsIgnoreCase(product.getProductName()))
+            {
+                int quantity=Integer.valueOf(getValue(quantityOfItemList.get(i)));
+                quantity++;
+                type(quantityOfItemList.get(i),quantity+"");
+                sleep(1000);
+                click(totalPriceOfItemList.get(i));
+                break;
+            }
+            i++;
+        }
+        
         return this;
     }
     
-    public cartPage verifyTotalPrice()
+    public cartPage verifyProductDetail(product product)
     {
-        double total=Double.valueOf(getText(totalPriceOfFirstItem).trim().replaceAll("Rs. ","").replaceAll(",",""));
-        double price=Double.valueOf(getText(priceOfFirstItem).trim().replaceAll("Rs. ","").replaceAll(",",""));
-        
-        Double expectedTotal=Integer.valueOf(getValue(quantityOfFirstItem))*price;
-        assertWithScreenshot(expectedTotal+"",total+"","Verifying the total field");
-        
-        return this;
-    }
+        int i=0;
+        for(WebElement name:nameOfItemList)
+        {
+            if(getText(name).equalsIgnoreCase(product.getProductName()) && product.getProductColour().equalsIgnoreCase(getText(colourOfItemList.get(i)).replaceAll("Color: ","")) && product.getProductSize().equalsIgnoreCase(getText(sizeOfItemList.get(i)).replaceAll("Size: ","")))
+            {
+                double total=Double.valueOf(getText(totalPriceOfItemList.get(i)).trim().replaceAll("Rs. ","").replaceAll(",",""));
+                double price=Double.valueOf(getText(priceOfItemList.get(i)).trim().replaceAll("Rs. ","").replaceAll(",",""));
     
-    public cartPage verifyProductDetailofFirst(product product)
-    {
-        assertWithScreenshot(product.getProductName(),getText(nameOfFirstItem),"verification of product name");
-        assertWithScreenshot(product.getProductColour(),getText(colourOfFirstItem).replaceAll("Color: ",""),"verification of product colour");
-        assertWithScreenshot(product.getProductSize(),getText(sizeOfFirstItem).replaceAll("Size: ",""),"verification of product size");
-        assertWithScreenshot(product.getProductPrice()+"",Double.valueOf(getText(priceOfFirstItem).trim().replaceAll("Rs. ","").replaceAll(",",""))+"","verification of product price");
+                Double expectedTotal=Integer.valueOf(getValue(quantityOfItemList.get(i)))*price;
+                assertWithScreenshot(expectedTotal+"",total+"","Verifying the total field");
+                
+                assertWithScreenshot(product.getProductPrice()+"",Double.valueOf(getText(priceOfItemList.get(i)).trim().replaceAll("Rs. ","").replaceAll(",",""))+"","verification of product price");
+                break;
+            }
+            else if(i==nameOfItemList.size()-1)
+            {
+                assertTrueWithScreenshot(false,"Verifying the product is present in cart");
+            }
+            i++;
+        }
+        
+       
         return this;
     }
     

@@ -68,6 +68,23 @@ public class basicActions
         }
     }
     
+    protected void selectByVisibleText(WebElement ele,String text)
+    {
+        int attempts = 0;
+        while(attempts < 5)
+        {
+            try
+            {
+                wait.until(ExpectedConditions.elementToBeClickable(ele));
+                new Select(ele).selectByVisibleText(text);
+                break;
+            } catch(StaleElementReferenceException e){}
+            
+            attempts++;
+        }
+    }
+    
+    
     protected String getText(WebElement ele)
     {
         int attempts = 0;

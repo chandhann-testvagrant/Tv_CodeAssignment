@@ -2,6 +2,7 @@ package executor;
 
 
 import model.product;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pom.homePage;
 import pom.productPage;
@@ -19,7 +20,7 @@ public class executor extends baseTest
                 .enterPassword(password);
     
     
-        productPage product_page=home_page.search("RoundNeck Shirt 14")
+        productPage product_page=home_page.search("Round Neck Shirt 6")
                 //.verifySearchResult()
                 .openFirstResult()
                 .clickOnAddToCart();
@@ -28,17 +29,19 @@ public class executor extends baseTest
                 .autoBuildProduct();
     
         product_page.tabClickOnCart()
-                .increaseQuantityOfFirstProductByone()
-                .verifyProductDetailofFirst(product)
-                .verifyTotalPrice()
+                .increaseQuantityOfProductByone(product)
+                .verifyProductDetail(product)
                 .tabClickOnHome()
                 .scrollToFeaturedCollection()
-                .openFirstFeaturedProduct();
+                .openFirstFeaturedProduct()
+                .addProductToCart("M","White");
+    
+        product= new productBuilder(driver)
+                .autoBuildProduct();
         
-       
+                product_page.tabClickOnCart()
+                        .verifyProductDetail(product);
         
-        
-
     }
 
 }

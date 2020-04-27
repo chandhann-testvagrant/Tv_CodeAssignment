@@ -1,15 +1,6 @@
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath "io.qameta.allure:allure-gradle:2.3"
-    }
-}
-
 plugins {
     id 'java'
-    id 'io.qameta.allure' version "2.8.1"
+
 }
 
 
@@ -34,12 +25,9 @@ dependencies {
     // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
     compile group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '3.8.1'
 // https://mvnrepository.com/artifact/io.qameta.allure/allure-generator
-    runtime group: 'io.qameta.allure', name: 'allure-generator', version: '2.8.1'
+  //  compile "com.aventstack:extentreports-testng-adapter:4.0.0"
  //   implementation 'org.testng:testng:6.9.6'
 
-
-    implementation 'com.testvagrant.optimuscloud:testng-dashboard:1.0.0'
-    implementation 'com.testvagrant.optimuscloud:java-client:1.0.0'
 
 
 }
@@ -66,10 +54,3 @@ task runTests(type: Test)  {
 
 
 
-
-allure {
-    version = '2.8.1'
-    autoconfigure = true
-    aspectjweaver = true
-    allureJavaVersion = '2.8.1'
-}
