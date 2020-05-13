@@ -2,7 +2,6 @@ package executor;
 
 
 import model.product;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pom.homePage;
 import pom.productPage;
@@ -16,10 +15,9 @@ public class executor extends baseTest
     @Test
     
     public void validatingSearch() {
-        homePage home_page= new welcomePage(driver)
+        homePage home_page= welcomePage.getInstance(driver)
                 .enterPassword(password);
-    
-    
+
         productPage product_page=home_page.search("Round Neck Shirt 6")
                 //.verifySearchResult()
                 .openFirstResult()
@@ -29,7 +27,7 @@ public class executor extends baseTest
                 .autoBuildProduct();
     
         product_page.tabClickOnCart()
-                .increaseQuantityOfProductByone(product)
+                .increaseQuantityOfProductByOne(product)
                 .verifyProductDetail(product)
                 .tabClickOnHome()
                 .scrollToFeaturedCollection()

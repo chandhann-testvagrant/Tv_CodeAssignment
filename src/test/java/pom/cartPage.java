@@ -11,25 +11,35 @@ import java.util.List;
 
 public class cartPage extends tabActions
 {
-    public cartPage(WebDriver driver)
+    private cartPage(WebDriver driver)
     {
         super(driver);
+        
         PageFactory.initElements(driver,this);
     }
     
-    
+    private static int count =0;
+    private static cartPage obj;
+    public static cartPage getInstance(WebDriver driver){
+        
+        if(count==0){
+            obj=new cartPage(driver);
+            count++;
+        }
+        
+        return obj;
+    }
     
     
     @FindBys(@FindBy(xpath = "//tr[@class='cart__row']//td[3]//input")) private List<WebElement> quantityOfItemList;
-    @FindBys (@FindBy(xpath = "//tr[@class='cart__row']//td[4]/div/span"))  private List<WebElement> totalPriceOfItemList;
-    @FindBys (@FindBy(xpath = "//tr[@class='cart__row']//td[2]//div[@data-cart-item-regular-price-group='']//dd"))  private List<WebElement> priceOfItemList;
+    @FindBys(@FindBy(xpath = "//tr[@class='cart__row']//td[4]/div/span"))  private List<WebElement> totalPriceOfItemList;
+    @FindBys(@FindBy(xpath = "//tr[@class='cart__row']//td[2]//div[@data-cart-item-regular-price-group='']//dd"))  private List<WebElement> priceOfItemList;
     @FindBys(@FindBy(xpath = "//tr[@class='cart__row']//td[1]//li[1]")) private List<WebElement> colourOfItemList;
     @FindBys({@FindBy(xpath = "//tr[@class='cart__row']//td[1]//li[2]")})    private List<WebElement> sizeOfItemList;
     @FindBys({@FindBy(xpath = "//tr[@class='cart__row']//td[1]//div/a")})    private List<WebElement> nameOfItemList;
-    
    
     
-    public cartPage increaseQuantityOfProductByone(product product)
+    public cartPage increaseQuantityOfProductByOne(product product)
     {
         int i=0;
         for(WebElement name:nameOfItemList)
@@ -46,7 +56,7 @@ public class cartPage extends tabActions
             i++;
         }
         
-        return this;
+        return getInstance(getDriverInstance());
     }
     
     public cartPage verifyProductDetail(product product)
@@ -73,8 +83,10 @@ public class cartPage extends tabActions
         }
         
        
-        return this;
+        return getInstance(getDriverInstance());
     }
+    
+    
     
     
     

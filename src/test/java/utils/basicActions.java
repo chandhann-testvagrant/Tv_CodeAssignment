@@ -12,7 +12,7 @@ import java.io.File;
 
 public class basicActions
 {
-    private WebDriver driver;
+    private static WebDriver driver;
     private WebDriverWait wait;
     protected basicActions(WebDriver driver)
     {
@@ -225,7 +225,7 @@ public class basicActions
         new WebDriverWait(driver,timeoutInSec).until(ExpectedConditions.alertIsPresent()).accept();
     }
     
-    protected WebDriver getDriverInstance()
+    protected static WebDriver getDriverInstance()
     {
         return driver;
     }

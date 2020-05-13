@@ -11,12 +11,23 @@ import java.util.List;
 
 public class homePage extends tabActions
 {
-    public homePage(WebDriver driver)
+    private homePage(WebDriver driver)
     {
         super(driver);
         PageFactory.initElements(driver,this);
     }
     
+    private static int count =0;
+    private static homePage obj;
+    public static homePage getInstance(WebDriver driver){
+        
+        if(count==0){
+            obj=new homePage(driver);
+            count++;
+        }
+        
+        return obj;
+    }
     
     
     
@@ -40,7 +51,7 @@ public class homePage extends tabActions
         tabClickOnSearch();
         type(searchField,searchTerm);
         type(searchField, Keys.ENTER);
-        return this;
+        return getInstance(getDriverInstance());
     }
     
     
@@ -53,26 +64,26 @@ public class homePage extends tabActions
            System.out.println(getText(element)+searchTerm);
             assertTrueWithScreenshot(getText(element).toLowerCase().contains(searchTerm.toLowerCase().trim()),"Result field name contains ");
         }
-        return this;
+        return getInstance(getDriverInstance());
         
     }
     
     public productPage openFirstResult()
     {
         click(searchResultLink.get(0));
-        return new productPage(getDriverInstance());
+        return productPage.getInstance(getDriverInstance());
     }
     
     public homePage scrollToFeaturedCollection()
     {
         scrollTOElement(featuredCollectionField);
-        return this;
+        return getInstance(getDriverInstance());
     }
     
     public productPage openFirstFeaturedProduct()
     {
         click(firstProductInFeaturedCollectionField);
-        return new productPage(getDriverInstance());
+        return productPage.getInstance(getDriverInstance());
     }
     
     
