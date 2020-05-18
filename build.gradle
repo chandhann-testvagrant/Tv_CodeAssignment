@@ -38,7 +38,8 @@ dependencies {
 
 task runTests(type: Test)  {
 
-
+    scanForTestClasses = false
+    include "**/executor/*.class"
     outputs.upToDateWhen {false}
 
     useTestNG() {
