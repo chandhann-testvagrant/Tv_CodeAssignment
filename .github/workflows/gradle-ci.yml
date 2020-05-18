@@ -25,7 +25,7 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew runTests test --stacktrace
     - task: ArchiveFiles@2
-        name: 'Pack ZIP release'
+      name: 'Pack ZIP release'
         inputs:
           rootFolderOrFile: build/reportng-reports
           includeRootFolder: true
