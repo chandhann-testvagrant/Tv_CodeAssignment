@@ -22,6 +22,6 @@ jobs:
         java-version: 1.8
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-  test:
+  task:
   - name: Build with Gradle
-    script: ./gradlew runTests --stacktrace
+    script: runTests
