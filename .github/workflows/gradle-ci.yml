@@ -14,9 +14,8 @@ stages:
   - test
 
 
-jobs:
   build:
-
+    stage: build
     runs-on: windows-latest
 
     steps:
