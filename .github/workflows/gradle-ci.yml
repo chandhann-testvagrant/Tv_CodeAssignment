@@ -23,5 +23,7 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
-      path: src/test
+      with:
+        name: Package
+        path: src/test
       run: ./gradlew runTests test --stacktrace
