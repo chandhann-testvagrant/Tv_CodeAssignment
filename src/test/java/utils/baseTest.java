@@ -37,7 +37,7 @@ public class baseTest extends constants
         
         
         ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-        File file=new File(classLoader.getResource("data.json").getFile());
+        File file=new File(classLoader.getResource("productData.json").getFile());
         Scanner myReader = null;
         try {
             myReader = new Scanner(file);

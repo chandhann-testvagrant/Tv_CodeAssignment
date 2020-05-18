@@ -4,9 +4,9 @@
            failures="1"
            errors="0"
            skipped="0"
-           time="23.942">
+           time="28.358">
   <properties />
-            <testcase name="validatingSearch" time="3.257" classname="executor.executor">
+            <testcase name="validatingSearch" time="3.342" classname="executor.executor">
                 <failure type="java.lang.AssertionError"
                   message="Result field name contains round neck shirt 14 expected [true] but found [false]"
               >
@@ -16,7 +16,7 @@
   org.testng.Assert.assertTrue(Assert.java:43)
   utils.basicActions.assertTrueWithScreenshot(basicActions.java:81)
   pom.homePage.verifySearchResult(homePage.java:52)
-  executor.executor.validatingSearch(executor.java:28)
+  executor.executor.validatingSearch(executor.java:29)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
   java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
   java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -38,8 +38,8 @@
           </testcase>
   
   
-            <testcase name="ValidateAddingProductOfDifferentSize" time="6.597" classname="executor.executor" />
-                <testcase name="ValidateAddingProductOfDifferentSize" time="6.214" classname="executor.executor" />
-                <testcase name="validatingSearch" time="7.874" classname="executor.executor" />
+            <testcase name="validatingSearch" time="8.475" classname="executor.executor" />
+                <testcase name="ValidateAddingProductOfDifferentSize" time="9.414" classname="executor.executor" />
+                <testcase name="ValidateAddingProductOfDifferentSize" time="7.127" classname="executor.executor" />
       
 </testsuite>
