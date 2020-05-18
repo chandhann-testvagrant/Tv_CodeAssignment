@@ -25,7 +25,6 @@ jobs:
 
     - name: Build with Gradle
       run: ./gradlew runTests test --stacktrace
-
   - publish: build/reportng-report
       artifact: report
 
