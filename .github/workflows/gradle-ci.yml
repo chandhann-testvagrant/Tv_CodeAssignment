@@ -25,8 +25,8 @@ jobs:
 
     - name: Build with Gradle
       run: ./gradlew runTests test --stacktrace
-    - name: DownloadBuildArtifacts@0
-      inputs:
+    - uses: DownloadBuildArtifacts@0
+      output:
         buildType: 'current'
         downloadType: 'directory'
         artifactName: 'report'
