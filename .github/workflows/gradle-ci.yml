@@ -16,9 +16,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-      with:
-        name: report
-        path: build/reportng-reports
     - name: Set up JDK 1.8
       uses: actions/setup-java@v1
       with:
@@ -27,7 +24,7 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew runTests test --stacktrace
-    - uses: actions/upload-artifact@v2
+    - uses: Post actions/upload-artifact@v2
       with:
         name: report
         path: build/reportng-reports
