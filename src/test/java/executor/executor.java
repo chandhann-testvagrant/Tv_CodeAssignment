@@ -40,7 +40,8 @@ public class executor extends baseTest
     public void ValidateAddingProductOfDifferentSize() {
     
         basicActions BA= new basicActions(driver);
-        homePage home_page= BA.getInstance(welcomePage.class)
+        // homePage home_page= BA.getInstance(welcomePage.class)
+        homePage home_page= welcomePage.getInstance(driver)
                 .enterPassword(password);
     
     
