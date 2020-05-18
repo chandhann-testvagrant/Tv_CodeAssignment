@@ -20,7 +20,7 @@ public class basicActions
 {
     private  WebDriver driver;
     private WebDriverWait wait;
-    protected basicActions(WebDriver driver)
+    public basicActions(WebDriver driver)
     {
         this.driver=driver;
         wait=new WebDriverWait(this.driver, constants.WebDriverWaitInSec);

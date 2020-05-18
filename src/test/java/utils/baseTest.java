@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 public class baseTest extends constants
 {
     protected WebDriver driver ;
-    @BeforeClass
+    @BeforeMethod
     public  void configuration() throws IOException {
         
         driver=new driverBuilder(browsertype).getDriver();
@@ -19,7 +19,7 @@ public class baseTest extends constants
         driver.get(url);
     }
 
-    @AfterClass
+    @AfterMethod
     public  void tearDown()
     {
         driver.quit();

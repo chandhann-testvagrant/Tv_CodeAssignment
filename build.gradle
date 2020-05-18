@@ -15,6 +15,7 @@ repositories {
 }
 
 dependencies {
+    testCompile group: 'org.uncommons', name: 'reportng', version: '1.1.4'
     // https://mvnrepository.com/artifact/org.testng/testng
     testCompile group: 'org.testng', name: 'testng', version: '7.1.0'
     // https://mvnrepository.com/artifact/io.appium/java-client
@@ -39,16 +40,14 @@ task runTests(type: Test)  {
 
 
     outputs.upToDateWhen {false}
-    systemProperty "browserType", System.getProperty("browserType")
-    useTestNG() {
-        include 'executor/executor/**'
-        testLogging.showStandardStreams = true
-        testLogging.showStandardStreams = true
-        reports.html.enabled = false
-        useDefaultListeners = true
-        parallel="methods"
-        threadCount = 3
 
+    useTestNG() {
+        parallel = "classes"
+        threadCount = 2
+        useDefaultListeners = false
+        listeners << 'org.uncommons.reportng.HTMLReporter'
+        listeners << 'org.uncommons.reportng.JUnitXMLReporter'
+        outputDirectory = file("$buildDir/reportng-reports")
     }
 }
 
