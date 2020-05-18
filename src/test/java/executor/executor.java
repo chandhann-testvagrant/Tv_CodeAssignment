@@ -2,6 +2,7 @@ package executor;
 
 
 import model.product;
+import org.json.JSONObject;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pom.homePage;
@@ -16,14 +17,14 @@ public class executor extends baseTest
 {
    
     
-    @Test(priority = 1,dataProvider = "testdata")
-    public void validatingSearch(String name,String size,String color) {
+    @Test(priority = 1,dataProvider = "ProductData")
+    public void validatingSearch(JSONObject obj) {
         basicActions BA= new basicActions(driver);
         
        homePage home_page= BA.getInstance(welcomePage.class)
         //homePage home_page= new welcomePage(driver)
                 .enterPassword(password);
-
+            String name=obj.getString("name");
         productPage product_page=home_page.search(name)
                 .verifySearchResult()
                 .openFirstResult()
@@ -39,9 +40,13 @@ public class executor extends baseTest
     }
     
     
-    @Test(priority = 2,dataProvider = "testdata")
-    public void ValidateAddingProductOfDifferentSize(String name,String size,String color) {
+    @Test(priority = 2,dataProvider = "ProductData")
+    public void ValidateAddingProductOfDifferentSize(JSONObject obj) {
     
+        String name=obj.getString("name"),
+                size=obj.getString("size"),
+                color=obj.getString("color");
+        
         basicActions BA= new basicActions(driver);
          homePage home_page= BA.getInstance(welcomePage.class)
        // homePage home_page= new welcomePage(driver)

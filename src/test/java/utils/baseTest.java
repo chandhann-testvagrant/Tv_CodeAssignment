@@ -1,10 +1,14 @@
 package utils;
 
 import generic.constants;
+import org.json.JSONObject;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class baseTest extends constants
@@ -18,24 +22,44 @@ public class baseTest extends constants
         driver.manage().window().maximize();
         driver.get(url);
     }
-    
-    @DataProvider(name="testdata")
-    public Object[][] testfeed(){
-        
-        String[][] test= new String[][]{
-                
-                { "Round Neck Shirt 14", "M","White"},
-                { "Round Neck Shirt 6", "M","White" }
-        };
-        
-        
-        
-        return test;
-    }
+   
 
     @AfterMethod
     public  void tearDown()
     {
         driver.quit();
+    }
+    
+    
+    
+    @DataProvider(name="ProductData")
+    public Object[] testfeed(){
+        
+        
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        File file=new File(classLoader.getResource("data.json").getFile());
+        Scanner myReader = null;
+        try {
+            myReader = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        String content="";
+        while (myReader.hasNextLine()) {
+            content =  content + myReader.nextLine();
+        }
+        myReader.close();
+        
+        JSONObject data= new JSONObject(content);
+        
+        int size=data.getJSONArray("data").length();
+        
+        Object [] test1= new Object[size];
+        
+        for(int i=0;i<size;i++){
+            test1[i]=data.getJSONArray("data").getJSONObject(i);
+        }
+        
+        return test1;
     }
 }

@@ -4,9 +4,9 @@
            failures="1"
            errors="0"
            skipped="0"
-           time="26.358">
+           time="23.942">
   <properties />
-            <testcase name="validatingSearch" time="3.580" classname="executor.executor">
+            <testcase name="validatingSearch" time="3.257" classname="executor.executor">
                 <failure type="java.lang.AssertionError"
                   message="Result field name contains round neck shirt 14 expected [true] but found [false]"
               >
@@ -38,8 +38,8 @@
           </testcase>
   
   
-            <testcase name="ValidateAddingProductOfDifferentSize" time="6.887" classname="executor.executor" />
-                <testcase name="ValidateAddingProductOfDifferentSize" time="7.611" classname="executor.executor" />
-                <testcase name="validatingSearch" time="8.280" classname="executor.executor" />
+            <testcase name="ValidateAddingProductOfDifferentSize" time="6.597" classname="executor.executor" />
+                <testcase name="ValidateAddingProductOfDifferentSize" time="6.214" classname="executor.executor" />
+                <testcase name="validatingSearch" time="7.874" classname="executor.executor" />
       
 </testsuite>
