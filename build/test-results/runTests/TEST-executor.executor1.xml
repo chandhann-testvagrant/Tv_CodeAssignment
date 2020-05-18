@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="executor.executor1" tests="2" skipped="0" failures="1" errors="0" timestamp="2020-05-18T10:47:27" hostname="Chandhans-MacBook-Pro.local" time="12.973">
+  <properties/>
+  <testcase name="validatingSearch" classname="executor.executor1" time="3.5">
+    <failure message="java.lang.AssertionError: Result field name contains round neck shirt 14 expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: Result field name contains round neck shirt 14 expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:97)
+	at org.testng.Assert.failNotEquals(Assert.java:969)
+	at org.testng.Assert.assertTrue(Assert.java:43)
+	at utils.basicActions.assertTrueWithScreenshot(basicActions.java:81)
+	at pom.homePage.verifySearchResult(homePage.java:52)
+	at executor.executor1.validatingSearch(executor1.java:25)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+</failure>
+  </testcase>
+  <testcase name="ValidateAddingProductOfDifferentSize" classname="executor.executor1" time="6.808"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Starting ChromeDriver 81.0.4044.138 (8c6c7ba89cc9453625af54f11fd83179e23450fa-refs/branch-heads/4044@{#999}) on port 3708
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+Starting ChromeDriver 81.0.4044.138 (8c6c7ba89cc9453625af54f11fd83179e23450fa-refs/branch-heads/4044@{#999}) on port 33288
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+[1589798844.651][WARNING]: FromSockAddr failed on netmask
+[1589798844.651][WARNING]: FromSockAddr failed on netmask
+May 18, 2020 4:17:25 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+May 18, 2020 4:17:25 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+[1589798846.773][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589798846.878][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589798846.980][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589798847.083][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589798847.099][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589798847.186][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589798847.201][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589798847.302][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589798847.403][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589798847.459][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589798847.621][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589798847.727][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589798847.918][SEVERE]: Timed out receiving message from renderer: 0.100
+Starting ChromeDriver 81.0.4044.138 (8c6c7ba89cc9453625af54f11fd83179e23450fa-refs/branch-heads/4044@{#999}) on port 19805
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+[1589798851.206][WARNING]: FromSockAddr failed on netmask
+May 18, 2020 4:17:31 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+[1589798853.854][SEVERE]: Timed out receiving message from renderer: 0.100
+]]></system-err>
+</testsuite>

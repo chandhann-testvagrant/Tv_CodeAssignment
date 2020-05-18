@@ -18,6 +18,20 @@ public class baseTest extends constants
         driver.manage().window().maximize();
         driver.get(url);
     }
+    
+    @DataProvider(name="testdata")
+    public Object[][] testfeed(){
+        
+        String[][] test= new String[][]{
+                
+                { "Round Neck Shirt 14", "M","White"},
+                { "Round Neck Shirt 6", "M","White" }
+        };
+        
+        
+        
+        return test;
+    }
 
     @AfterMethod
     public  void tearDown()
