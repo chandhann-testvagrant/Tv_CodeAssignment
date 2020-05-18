@@ -17,7 +17,7 @@ public class productPage extends tabActions
     private static productPage obj;
     public static productPage getInstance(WebDriver driver){
         
-        if(count==0){
+        if(count==0||obj.getSessionID()==null){
             obj=new productPage(driver);
             count++;
         }

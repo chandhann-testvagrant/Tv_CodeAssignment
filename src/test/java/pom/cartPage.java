@@ -22,7 +22,7 @@ public class cartPage extends tabActions
     private static cartPage obj;
     public static cartPage getInstance(WebDriver driver){
         
-        if(count==0){
+        if(count==0||obj.getSessionID()==null){
             obj=new cartPage(driver);
             count++;
         }

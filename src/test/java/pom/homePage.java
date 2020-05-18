@@ -21,7 +21,7 @@ public class homePage extends tabActions
     private static homePage obj;
     public static homePage getInstance(WebDriver driver){
         
-        if(count==0){
+        if(count==0||obj.getSessionID()==null){
             obj=new homePage(driver);
             count++;
         }
@@ -62,7 +62,7 @@ public class homePage extends tabActions
         {
             
            System.out.println(getText(element)+searchTerm);
-            assertTrueWithScreenshot(getText(element).toLowerCase().contains(searchTerm.toLowerCase().trim()),"Result field name contains ");
+            assertTrueWithScreenshot(getText(element).toLowerCase().contains(searchTerm.toLowerCase().trim()),"Result field name contains "+searchTerm.toLowerCase().trim());
         }
         return getInstance(getDriverInstance());
         

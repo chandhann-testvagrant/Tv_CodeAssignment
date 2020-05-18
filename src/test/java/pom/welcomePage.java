@@ -15,9 +15,10 @@ public class welcomePage extends tabActions
     
     private static int count =0;
     private static welcomePage obj;
-    public static welcomePage getInstance(WebDriver driver){
+    public static synchronized welcomePage getInstance(WebDriver driver){
         
-        if(count==0){
+        
+        if(count==0||obj.getSessionID()==null){
             obj=new welcomePage(driver);
             count++;
         }

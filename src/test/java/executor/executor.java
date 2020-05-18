@@ -7,19 +7,20 @@ import pom.homePage;
 import pom.productPage;
 import pom.welcomePage;
 import utils.baseTest;
+import utils.basicActions;
 import utils.builder.productBuilder;
 
 
 public class executor extends baseTest
 {
-    @Test
-    
+    @Test(priority = 1)
     public void validatingSearch() {
-        homePage home_page= welcomePage.getInstance(driver)
+        basicActions BA= new basicActions(driver);
+        homePage home_page= BA.getInstance(welcomePage.class)
                 .enterPassword(password);
 
-        productPage product_page=home_page.search("Round Neck Shirt 6")
-                //.verifySearchResult()
+        productPage product_page=home_page.search("Round Neck Shirt 14")
+                .verifySearchResult()
                 .openFirstResult()
                 .clickOnAddToCart();
         
@@ -28,19 +29,31 @@ public class executor extends baseTest
     
         product_page.tabClickOnCart()
                 .increaseQuantityOfProductByOne(product)
-                .verifyProductDetail(product)
-                .tabClickOnHome()
-                .scrollToFeaturedCollection()
-                .openFirstFeaturedProduct()
-                .addProductToCart("M","White");
-    
-        product= new productBuilder(driver)
-                .autoBuildProduct();
-        
-                product_page.tabClickOnCart()
-                        .verifyProductDetail(product);
+                .verifyProductDetail(product);
         
     }
+    
+    
+    @Test(priority = 2)
+    public void ValidateAddingProductOfDifferentSize() {
+    
+        basicActions BA= new basicActions(driver);
+        homePage home_page= BA.getInstance(welcomePage.class)
+                .enterPassword(password);
+    
+    
+        productPage product_page = home_page.tabClickOnHome()
+                .scrollToFeaturedCollection()
+                .openFirstFeaturedProduct()
+                .addProductToCart("M", "White");
+    
+        product product= new productBuilder(driver)
+                .autoBuildProduct();
+        
+        product_page.tabClickOnCart()
+                .verifyProductDetail(product);
+    }
+    
 
 }
 

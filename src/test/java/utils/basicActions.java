@@ -1,18 +1,24 @@
 package utils;
 
 import generic.constants;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.remote.SessionId;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.Reporter;
 
 import java.io.File;
+import java.io.IOException;
+import java.util.Date;
 
 public class basicActions
 {
-    private static WebDriver driver;
+    private  WebDriver driver;
     private WebDriverWait wait;
     protected basicActions(WebDriver driver)
     {
@@ -20,14 +26,40 @@ public class basicActions
         wait=new WebDriverWait(this.driver, constants.WebDriverWaitInSec);
     }
     
+    public <TPage extends basicActions> TPage getInstance(Class<TPage> pageClass) {
+        try {
+            
+            return PageFactory.initElements(driver, pageClass);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw e;
+        }
+    }
+    
     
     public byte[] takeScreenshot(String name)
     {
+        System.setProperty("org.uncommons.reportng.escape-output", "false");
+        String currentPath=System.getProperty("user.dir")+"/screenshot";
+        File DestFile=new File(currentPath+"/"+name+".png");
+
         //Convert web driver object to TakeScreenshot
         TakesScreenshot scrShot =((TakesScreenshot)driver);
         //Call getScreenshotAs method to create image file
         File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
+    
+        try {
+            FileUtils.copyFile(SrcFile, DestFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    
+        // Add screenshot name in report in order to attach screenshot in ReportNg
+        Reporter.log("<a href=\"" + name + "\"><p align=\"left\">Error screenshot at " + new Date()+ "</p>");
+        Reporter.log("<p><img width=\"1024\" src=\"" + DestFile.getAbsoluteFile() + "\" alt=\"screenshot at " + new Date()+ "\"/></p></a><br />");
+    
         return scrShot.getScreenshotAs(OutputType.BYTES);
+        
     }
 
     
@@ -215,21 +247,22 @@ public class basicActions
             attempts++;
         }
     }
-    
- 
-
-
 
     protected void waitForAlertAndAccept(long timeoutInSec)
     {
         new WebDriverWait(driver,timeoutInSec).until(ExpectedConditions.alertIsPresent()).accept();
     }
     
-    protected static WebDriver getDriverInstance()
+    protected  WebDriver getDriverInstance()
     {
         return driver;
     }
     
+    protected SessionId getSessionID(){
+        SessionId sessionid = ((RemoteWebDriver) driver).getSessionId();
+        return sessionid;
+    
+    }
     protected <T extends basicActions> void reinitializePage(T obj)
     {
         
