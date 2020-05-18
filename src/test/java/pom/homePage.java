@@ -1,5 +1,6 @@
 package pom;
 
+import model.product;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -47,7 +48,6 @@ public class homePage extends tabActions
         reinitializePage(this);
         for(WebElement element: searchResult)
         {
-            
            System.out.println(getText(element)+searchTerm);
             assertTrueWithScreenshot(getText(element).toLowerCase().contains(searchTerm.toLowerCase().trim()),"Result field name contains "+searchTerm.toLowerCase().trim());
         }
@@ -59,6 +59,21 @@ public class homePage extends tabActions
     {
         click(searchResultLink.get(0));
         return new productPage(getDriverInstance());
+    }
+    
+    public homePage AddMultipleProducts(List<product> products)
+    {
+        for(product product:products)
+        {
+            search(product.getProductName())
+                    .verifySearchResult()
+                    .openFirstResult()
+                    .addProductToCart(product.getProductSize(),product.getProductColour())
+                    .tabClickOnHome();
+        }
+        
+        
+        return this;
     }
     
     public homePage scrollToFeaturedCollection()

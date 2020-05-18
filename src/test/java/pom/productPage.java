@@ -1,9 +1,11 @@
 package pom;
 
+import model.cart;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import utils.builder.productBuilder;
 
 public class productPage extends tabActions
 {
@@ -23,6 +25,7 @@ public class productPage extends tabActions
     {
         click(addToCartButton);
         click(closeAddedCartPopup);
+        cart.addProductToCart(new productBuilder(getDriverInstance()).autoBuildProduct());
         return this;
     }
     
@@ -30,9 +33,7 @@ public class productPage extends tabActions
     {
         selectByVisibleText(productSize,size);
         selectByVisibleText(productColor,Colour);
-        
-        click(addToCartButton);
-        click(closeAddedCartPopup);
+        clickOnAddToCart();
         return this;
     }
     

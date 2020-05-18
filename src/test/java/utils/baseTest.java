@@ -1,6 +1,7 @@
 package utils;
 
 import generic.constants;
+import model.cart;
 import org.json.JSONObject;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
@@ -27,6 +28,7 @@ public class baseTest extends constants
     @AfterMethod
     public  void tearDown()
     {
+        cart.clearCart();
         driver.quit();
     }
     

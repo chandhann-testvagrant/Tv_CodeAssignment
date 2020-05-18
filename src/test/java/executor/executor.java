@@ -19,9 +19,9 @@ public class executor extends baseTest
     
     @Test(priority = 1,dataProvider = "ProductData")
     public void validatingSearch(JSONObject obj) {
-        basicActions BA= new basicActions(driver);
+        basicActions basic_actions= new basicActions(driver);
         
-       homePage home_page= BA.getInstance(welcomePage.class)
+       homePage home_page= basic_actions.getInstance(welcomePage.class)
         //homePage home_page= new welcomePage(driver)
                 .enterPassword(password);
             String name=obj.getString("name");
@@ -36,6 +36,8 @@ public class executor extends baseTest
         product_page.tabClickOnCart()
                 .increaseQuantityOfProductByOne(product)
                 .verifyProductDetail(product);
+        product_page.tabClickOnCart()
+                .verifyCart();
         
     }
     

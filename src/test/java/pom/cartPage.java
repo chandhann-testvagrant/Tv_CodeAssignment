@@ -1,5 +1,6 @@
 package pom;
 
+import model.cart;
 import model.product;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -74,7 +75,16 @@ public class cartPage extends tabActions
         return this;
     }
     
-    
+    public cartPage verifyCart()
+    {
+        List<product> productslist=cart.getProductsFromCart();
+        for (product product:productslist)
+        {
+            verifyProductDetail(product);
+        }
+       
+        return this;
+    }
     
     
     
