@@ -39,7 +39,7 @@ dependencies {
 task runTests(type: Test)  {
 
     scanForTestClasses = false
-    include "**/executor/*.class"
+    classpath 'build/classes'
     outputs.upToDateWhen {false}
 
     useTestNG() {
