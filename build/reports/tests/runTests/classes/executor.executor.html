@@ -29,7 +29,7 @@
 </td>
 <td>
 <div class="infoBox" id="failures">
-<div class="counter">2</div>
+<div class="counter">0</div>
 <p>failures</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.011s</div>
+<div class="counter">22.250s</div>
 <p>duration</p>
 </div>
 </td>
@@ -50,8 +50,8 @@
 </div>
 </td>
 <td>
-<div class="infoBox failures" id="successRate">
-<div class="percent">0%</div>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
 <p>successful</p>
 </div>
 </td>
@@ -61,89 +61,16 @@
 <div id="tabs">
 <ul class="tabLinks">
 <li>
-<a href="#tab0">Failed tests</a>
+<a href="#tab0">Tests</a>
 </li>
 <li>
-<a href="#tab1">Tests</a>
+<a href="#tab1">Standard output</a>
 </li>
 <li>
 <a href="#tab2">Standard error</a>
 </li>
 </ul>
 <div id="tab0" class="tab">
-<h2>Failed tests</h2>
-<div class="test">
-<a name="ValidateAddingProductOfDifferentSize"></a>
-<h3 class="failures">ValidateAddingProductOfDifferentSize</h3>
-<span class="code">
-<pre>java.lang.RuntimeException: java.lang.InstantiationException: pom.welcomePage
-	at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:131)
-	at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:63)
-	at utils.basicActions.getInstance(basicActions.java:32)
-	at executor.executor.ValidateAddingProductOfDifferentSize(executor.java:41)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:834)
-Caused by: java.lang.InstantiationException: pom.welcomePage
-	at java.base/java.lang.Class.newInstance(Class.java:571)
-	at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:128)
-	... 18 more
-Caused by: java.lang.NoSuchMethodException: pom.welcomePage.&lt;init&gt;()
-	at java.base/java.lang.Class.getConstructor0(Class.java:3349)
-	at java.base/java.lang.Class.newInstance(Class.java:556)
-	... 19 more
-</pre>
-</span>
-</div>
-<div class="test">
-<a name="validatingSearch"></a>
-<h3 class="failures">validatingSearch</h3>
-<span class="code">
-<pre>java.lang.RuntimeException: java.lang.InstantiationException: pom.welcomePage
-	at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:131)
-	at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:63)
-	at utils.basicActions.getInstance(basicActions.java:32)
-	at executor.executor.validatingSearch(executor.java:19)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:834)
-Caused by: java.lang.InstantiationException: pom.welcomePage
-	at java.base/java.lang.Class.newInstance(Class.java:571)
-	at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:128)
-	... 18 more
-Caused by: java.lang.NoSuchMethodException: pom.welcomePage.&lt;init&gt;()
-	at java.base/java.lang.Class.getConstructor0(Class.java:3349)
-	at java.base/java.lang.Class.newInstance(Class.java:556)
-	... 19 more
-</pre>
-</span>
-</div>
-</div>
-<div id="tab1" class="tab">
 <h2>Tests</h2>
 <table>
 <thead>
@@ -154,16 +81,23 @@ Caused by: java.lang.NoSuchMethodException: pom.welcomePage.&lt;init&gt;()
 </tr>
 </thead>
 <tr>
-<td class="failures">ValidateAddingProductOfDifferentSize</td>
-<td class="failures">0.003s</td>
-<td class="failures">failed</td>
+<td class="success">ValidateAddingProductOfDifferentSize</td>
+<td class="success">9.069s</td>
+<td class="success">passed</td>
 </tr>
 <tr>
-<td class="failures">validatingSearch</td>
-<td class="failures">0.008s</td>
-<td class="failures">failed</td>
+<td class="success">validatingSearch</td>
+<td class="success">13.181s</td>
+<td class="success">passed</td>
 </tr>
 </table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>Round Neck Shirt 6Round Neck Shirt 6
+</pre>
+</span>
 </div>
 <div id="tab2" class="tab">
 <h2>Standard error</h2>
@@ -171,86 +105,136 @@ Caused by: java.lang.NoSuchMethodException: pom.welcomePage.&lt;init&gt;()
 <pre>SLF4J: Failed to load class &quot;org.slf4j.impl.StaticLoggerBinder&quot;.
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-Starting ChromeDriver 81.0.4044.138 (8c6c7ba89cc9453625af54f11fd83179e23450fa-refs/branch-heads/4044@{#999}) on port 15866
+Starting ChromeDriver 81.0.4044.138 (8c6c7ba89cc9453625af54f11fd83179e23450fa-refs/branch-heads/4044@{#999}) on port 18113
 Only local connections are allowed.
 Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
-[1589793156.995][WARNING]: FromSockAddr failed on netmask
-May 18, 2020 2:42:37 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+[1589795613.291][WARNING]: FromSockAddr failed on netmask
+May 18, 2020 3:23:33 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
-[1589793159.362][SEVERE]: Timed out receiving message from renderer: 0.100
-[1589793159.465][SEVERE]: Timed out receiving message from renderer: 0.100
-[1589793159.568][SEVERE]: Timed out receiving message from renderer: 0.100
-[1589793159.669][SEVERE]: Timed out receiving message from renderer: 0.100
-[1589793159.771][SEVERE]: Timed out receiving message from renderer: 0.100
-java.lang.RuntimeException: java.lang.InstantiationException: pom.welcomePage
-	at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:131)
-	at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:63)
-	at utils.basicActions.getInstance(basicActions.java:32)
-	at executor.executor.validatingSearch(executor.java:19)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:834)
-Caused by: java.lang.InstantiationException: pom.welcomePage
-	at java.base/java.lang.Class.newInstance(Class.java:571)
-	at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:128)
-	... 18 more
-Caused by: java.lang.NoSuchMethodException: pom.welcomePage.&lt;init&gt;()
-	at java.base/java.lang.Class.getConstructor0(Class.java:3349)
-	at java.base/java.lang.Class.newInstance(Class.java:556)
-	... 19 more
-Starting ChromeDriver 81.0.4044.138 (8c6c7ba89cc9453625af54f11fd83179e23450fa-refs/branch-heads/4044@{#999}) on port 17558
+[1589795616.065][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795616.168][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795616.270][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795616.373][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795616.476][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795616.578][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795616.681][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795616.868][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795616.971][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795617.135][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795617.238][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795617.472][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795617.663][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795617.872][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795619.305][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795619.407][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795619.531][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795619.633][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795619.736][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795619.838][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795619.940][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795620.043][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795620.145][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795620.247][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795620.349][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795620.452][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795620.554][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795621.761][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795621.942][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795622.044][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795622.146][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795622.248][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795623.290][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795623.393][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795623.495][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795623.597][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795623.699][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795623.801][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795623.903][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795624.005][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795624.147][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795624.248][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795624.351][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795624.453][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795624.620][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795624.722][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795624.823][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795624.925][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795625.029][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795625.131][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795625.233][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795625.338][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795625.534][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795625.637][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795625.740][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795625.844][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795625.952][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795626.054][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795626.157][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795626.260][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795626.363][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795626.466][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795626.569][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795626.672][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795626.775][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795629.394][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795629.497][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795629.600][SEVERE]: Timed out receiving message from renderer: 0.100
+Starting ChromeDriver 81.0.4044.138 (8c6c7ba89cc9453625af54f11fd83179e23450fa-refs/branch-heads/4044@{#999}) on port 13658
 Only local connections are allowed.
 Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
-[1589793160.279][WARNING]: FromSockAddr failed on netmask
-May 18, 2020 2:42:40 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+[1589795631.310][WARNING]: FromSockAddr failed on netmask
+May 18, 2020 3:23:51 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
-[1589793162.123][SEVERE]: Timed out receiving message from renderer: 0.100
-[1589793162.224][SEVERE]: Timed out receiving message from renderer: 0.100
-[1589793162.326][SEVERE]: Timed out receiving message from renderer: 0.100
-[1589793162.427][SEVERE]: Timed out receiving message from renderer: 0.100
-[1589793162.529][SEVERE]: Timed out receiving message from renderer: 0.100
-[1589793162.669][SEVERE]: Timed out receiving message from renderer: 0.100
-[1589793162.875][SEVERE]: Timed out receiving message from renderer: 0.100
-java.lang.RuntimeException: java.lang.InstantiationException: pom.welcomePage
-	at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:131)
-	at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:63)
-	at utils.basicActions.getInstance(basicActions.java:32)
-	at executor.executor.ValidateAddingProductOfDifferentSize(executor.java:41)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
-	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
-	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
-	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
-	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
-	at java.base/java.lang.Thread.run(Thread.java:834)
-Caused by: java.lang.InstantiationException: pom.welcomePage
-	at java.base/java.lang.Class.newInstance(Class.java:571)
-	at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:128)
-	... 18 more
-Caused by: java.lang.NoSuchMethodException: pom.welcomePage.&lt;init&gt;()
-	at java.base/java.lang.Class.getConstructor0(Class.java:3349)
-	at java.base/java.lang.Class.newInstance(Class.java:556)
-	... 19 more
+[1589795633.364][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795633.467][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795633.570][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795633.673][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795633.776][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795633.940][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795634.042][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795634.177][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795634.278][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795634.538][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795635.836][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795636.030][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795636.132][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795636.234][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795636.336][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795637.582][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795637.751][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795637.854][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795637.956][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795638.059][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795638.161][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795638.264][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795638.367][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795638.470][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795638.573][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795638.697][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795638.799][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795638.902][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795639.005][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795639.108][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795639.210][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795639.312][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795639.417][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795639.583][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795639.687][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795639.790][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795639.893][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795639.996][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795640.099][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795640.228][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795640.330][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795640.432][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795640.534][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795640.636][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795640.747][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795640.850][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795640.952][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795641.055][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795641.158][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589795643.465][SEVERE]: Timed out receiving message from renderer: 0.100
 </pre>
 </span>
 </div>
@@ -262,7 +246,7 @@ Caused by: java.lang.NoSuchMethodException: pom.welcomePage.&lt;init&gt;()
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 5.2.1</a> at 18-May-2020, 2:42:48 PM</p>
+<a href="http://www.gradle.org">Gradle 5.2.1</a> at 18-May-2020, 3:24:08 PM</p>
 </div>
 </div>
 </body>

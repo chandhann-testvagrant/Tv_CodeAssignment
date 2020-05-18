@@ -7,24 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 
 public class productPage extends tabActions
 {
-    private productPage(WebDriver driver)
+    productPage(WebDriver driver)
     {
         super(driver);
         PageFactory.initElements(driver,this);
     }
-    
-    private static int count =0;
-    private static productPage obj;
-    public static productPage getInstance(WebDriver driver){
-        
-        if(count==0||obj.getSessionID()==null){
-            obj=new productPage(driver);
-            count++;
-        }
-        
-        return obj;
-    }
-    
     
     @FindBy(xpath = "//span[contains(text(),'Add to cart')]/parent::button") private WebElement addToCartButton;
     @FindBy(xpath = "/html/body/div[1]/div/div[1]/button") private WebElement closeAddedCartPopup;
@@ -36,7 +23,7 @@ public class productPage extends tabActions
     {
         click(addToCartButton);
         click(closeAddedCartPopup);
-        return getInstance(getDriverInstance());
+        return this;
     }
     
     public productPage addProductToCart(String size, String Colour)
@@ -46,7 +33,7 @@ public class productPage extends tabActions
         
         click(addToCartButton);
         click(closeAddedCartPopup);
-        return getInstance(getDriverInstance());
+        return this;
     }
     
  

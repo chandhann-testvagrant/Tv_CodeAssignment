@@ -18,10 +18,10 @@ public class executor extends baseTest
         basicActions BA= new basicActions(driver);
         
        // homePage home_page= BA.getInstance(welcomePage.class)
-        homePage home_page= welcomePage.getInstance(driver)
+        homePage home_page= new welcomePage(driver)
                 .enterPassword(password);
 
-        productPage product_page=home_page.search("Round Neck Shirt 14")
+        productPage product_page=home_page.search("Round Neck Shirt 6")
                 .verifySearchResult()
                 .openFirstResult()
                 .clickOnAddToCart();
@@ -41,7 +41,7 @@ public class executor extends baseTest
     
         basicActions BA= new basicActions(driver);
         // homePage home_page= BA.getInstance(welcomePage.class)
-        homePage home_page= welcomePage.getInstance(driver)
+        homePage home_page= new welcomePage(driver)
                 .enterPassword(password);
     
     

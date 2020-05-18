@@ -11,23 +11,11 @@ import java.util.List;
 
 public class cartPage extends tabActions
 {
-    private cartPage(WebDriver driver)
+    cartPage(WebDriver driver)
     {
         super(driver);
         
         PageFactory.initElements(driver,this);
-    }
-    
-    private static int count =0;
-    private static cartPage obj;
-    public static cartPage getInstance(WebDriver driver){
-        
-        if(count==0||obj.getSessionID()==null){
-            obj=new cartPage(driver);
-            count++;
-        }
-        
-        return obj;
     }
     
     
@@ -56,7 +44,7 @@ public class cartPage extends tabActions
             i++;
         }
         
-        return getInstance(getDriverInstance());
+        return this;
     }
     
     public cartPage verifyProductDetail(product product)
@@ -83,7 +71,7 @@ public class cartPage extends tabActions
         }
         
        
-        return getInstance(getDriverInstance());
+        return this;
     }
     
     

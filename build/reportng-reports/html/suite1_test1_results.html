@@ -12,13 +12,15 @@
 <body>
 <h1>Gradle test</h1>
 <p>
-  Test duration: 6.505s
+  Test duration: 30.972s
 </p>
 
 
 
+
+
   <table class="resultsTable">
-    <tr><th colspan="3" class="header failed">Failed Tests</th></tr>
+    <tr><th colspan="3" class="header passed">Passed Tests</th></tr>
           <tr>
         <td colspan="3" class="group">executor.executor</td>
       </tr>
@@ -28,82 +30,13 @@
                   ValidateAddingProductOfDifferentSize
       </td>
   <td class="duration">
-    0.003s
+    9.069s
   </td>
   <td class="result">
         
     
         
 
-        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>java.lang.RuntimeException: java.lang.InstantiationException: pom.welcomePage</b></a><br />
-    <div class="stackTrace" id="exception-0">
-              org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:131)<br />
-              org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:63)<br />
-              utils.basicActions.getInstance(basicActions.java:32)<br />
-              executor.executor.ValidateAddingProductOfDifferentSize(executor.java:41)<br />
-              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
-              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
-              java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
-              java.base/java.lang.reflect.Method.invoke(Method.java:566)<br />
-              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)<br />
-              org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)<br />
-              org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)<br />
-              org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)<br />
-              org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)<br />
-              org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)<br />
-              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)<br />
-              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)<br />
-              java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)<br />
-              java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)<br />
-              java.base/java.lang.Thread.run(Thread.java:834)<br />
-                    <b>Caused by: </b> <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse">java.lang.InstantiationException: pom.welcomePage</a><br />
-        <div class="stackTrace" id="exception-1">
-                      java.base/java.lang.Class.newInstance(Class.java:571)<br />
-                      org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:128)<br />
-                      org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:63)<br />
-                      utils.basicActions.getInstance(basicActions.java:32)<br />
-                      executor.executor.ValidateAddingProductOfDifferentSize(executor.java:41)<br />
-                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
-                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
-                      java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
-                      java.base/java.lang.reflect.Method.invoke(Method.java:566)<br />
-                      org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)<br />
-                      org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)<br />
-                      org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)<br />
-                      org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)<br />
-                      org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)<br />
-                      org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)<br />
-                      org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)<br />
-                      org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)<br />
-                      java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)<br />
-                      java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)<br />
-                      java.base/java.lang.Thread.run(Thread.java:834)<br />
-                  </div>
-              <b>Caused by: </b> <a href="javascript:toggleElement('exception-2', 'block')" title="Click to expand/collapse">java.lang.NoSuchMethodException: pom.welcomePage.&lt;init&gt;()</a><br />
-        <div class="stackTrace" id="exception-2">
-                      java.base/java.lang.Class.getConstructor0(Class.java:3349)<br />
-                      java.base/java.lang.Class.newInstance(Class.java:556)<br />
-                      org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:128)<br />
-                      org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:63)<br />
-                      utils.basicActions.getInstance(basicActions.java:32)<br />
-                      executor.executor.ValidateAddingProductOfDifferentSize(executor.java:41)<br />
-                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
-                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
-                      java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
-                      java.base/java.lang.reflect.Method.invoke(Method.java:566)<br />
-                      org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)<br />
-                      org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)<br />
-                      org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)<br />
-                      org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)<br />
-                      org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)<br />
-                      org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)<br />
-                      org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)<br />
-                      org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)<br />
-                      java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)<br />
-                      java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)<br />
-                      java.base/java.lang.Thread.run(Thread.java:834)<br />
-                  </div>
-          </div>
       </td>
 </tr>
 <tr>
@@ -111,87 +44,16 @@
                   validatingSearch
       </td>
   <td class="duration">
-    0.008s
+    13.181s
   </td>
   <td class="result">
         
     
         
 
-        <a href="javascript:toggleElement('exception-3', 'block')" title="Click to expand/collapse"><b>java.lang.RuntimeException: java.lang.InstantiationException: pom.welcomePage</b></a><br />
-    <div class="stackTrace" id="exception-3">
-              org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:131)<br />
-              org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:63)<br />
-              utils.basicActions.getInstance(basicActions.java:32)<br />
-              executor.executor.validatingSearch(executor.java:19)<br />
-              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
-              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
-              java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
-              java.base/java.lang.reflect.Method.invoke(Method.java:566)<br />
-              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)<br />
-              org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)<br />
-              org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)<br />
-              org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)<br />
-              org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)<br />
-              org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)<br />
-              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)<br />
-              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)<br />
-              java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)<br />
-              java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)<br />
-              java.base/java.lang.Thread.run(Thread.java:834)<br />
-                    <b>Caused by: </b> <a href="javascript:toggleElement('exception-4', 'block')" title="Click to expand/collapse">java.lang.InstantiationException: pom.welcomePage</a><br />
-        <div class="stackTrace" id="exception-4">
-                      java.base/java.lang.Class.newInstance(Class.java:571)<br />
-                      org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:128)<br />
-                      org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:63)<br />
-                      utils.basicActions.getInstance(basicActions.java:32)<br />
-                      executor.executor.validatingSearch(executor.java:19)<br />
-                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
-                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
-                      java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
-                      java.base/java.lang.reflect.Method.invoke(Method.java:566)<br />
-                      org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)<br />
-                      org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)<br />
-                      org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)<br />
-                      org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)<br />
-                      org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)<br />
-                      org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)<br />
-                      org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)<br />
-                      org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)<br />
-                      java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)<br />
-                      java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)<br />
-                      java.base/java.lang.Thread.run(Thread.java:834)<br />
-                  </div>
-              <b>Caused by: </b> <a href="javascript:toggleElement('exception-5', 'block')" title="Click to expand/collapse">java.lang.NoSuchMethodException: pom.welcomePage.&lt;init&gt;()</a><br />
-        <div class="stackTrace" id="exception-5">
-                      java.base/java.lang.Class.getConstructor0(Class.java:3349)<br />
-                      java.base/java.lang.Class.newInstance(Class.java:556)<br />
-                      org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:128)<br />
-                      org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:63)<br />
-                      utils.basicActions.getInstance(basicActions.java:32)<br />
-                      executor.executor.validatingSearch(executor.java:19)<br />
-                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
-                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
-                      java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
-                      java.base/java.lang.reflect.Method.invoke(Method.java:566)<br />
-                      org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)<br />
-                      org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)<br />
-                      org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)<br />
-                      org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)<br />
-                      org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)<br />
-                      org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)<br />
-                      org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)<br />
-                      org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)<br />
-                      java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)<br />
-                      java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)<br />
-                      java.base/java.lang.Thread.run(Thread.java:834)<br />
-                  </div>
-          </div>
       </td>
 </tr>
       </table>
-
-
   
 </body>
 </html>

@@ -29,13 +29,13 @@ public class tabActions extends basicActions
     public cartPage tabClickOnCart()
     {
         click(cartButton);
-        return cartPage.getInstance(getDriverInstance());
+        return new cartPage(getDriverInstance());
     }
     
     public homePage tabClickOnHome()
     {
         click(homeButton);
-        return  homePage.getInstance(getDriverInstance());
+        return  new homePage(getDriverInstance());
     }
     
    

@@ -11,25 +11,12 @@ import java.util.List;
 
 public class homePage extends tabActions
 {
-    private homePage(WebDriver driver)
+    homePage(WebDriver driver)
     {
         super(driver);
         PageFactory.initElements(driver,this);
     }
-    
-    private static int count =0;
-    private static homePage obj;
-    public static homePage getInstance(WebDriver driver){
-        
-        if(count==0||obj.getSessionID()==null){
-            obj=new homePage(driver);
-            count++;
-        }
-        
-        return obj;
-    }
-    
-    
+
     
     @FindBy(xpath = "//*[@id='SearchDrawer']/div/div/form/div/input[1]") private WebElement searchField;
     @FindBy(xpath = "//h2[text()='Featured collection']") private WebElement featuredCollectionField;
@@ -51,7 +38,7 @@ public class homePage extends tabActions
         tabClickOnSearch();
         type(searchField,searchTerm);
         type(searchField, Keys.ENTER);
-        return getInstance(getDriverInstance());
+        return this;
     }
     
     
@@ -64,26 +51,26 @@ public class homePage extends tabActions
            System.out.println(getText(element)+searchTerm);
             assertTrueWithScreenshot(getText(element).toLowerCase().contains(searchTerm.toLowerCase().trim()),"Result field name contains "+searchTerm.toLowerCase().trim());
         }
-        return getInstance(getDriverInstance());
+        return this;
         
     }
     
     public productPage openFirstResult()
     {
         click(searchResultLink.get(0));
-        return productPage.getInstance(getDriverInstance());
+        return new productPage(getDriverInstance());
     }
     
     public homePage scrollToFeaturedCollection()
     {
         scrollTOElement(featuredCollectionField);
-        return getInstance(getDriverInstance());
+        return this;
     }
     
     public productPage openFirstFeaturedProduct()
     {
         click(firstProductInFeaturedCollectionField);
-        return productPage.getInstance(getDriverInstance());
+        return new productPage(getDriverInstance());
     }
     
     
