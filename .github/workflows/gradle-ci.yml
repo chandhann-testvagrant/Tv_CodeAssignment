@@ -24,7 +24,7 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew runTests test --stacktrace
-    - uses: Post actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v3
       with:
         name: report
         path: build/reportng-reports
