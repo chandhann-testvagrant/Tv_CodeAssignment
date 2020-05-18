@@ -26,6 +26,6 @@ jobs:
       run: ./gradlew runTests test --stacktrace
     - uses: actions/upload-artifact@v1
       with:
-        name: Package
+        name: report
         path: build/reportng-reports
 
