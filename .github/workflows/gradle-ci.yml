@@ -30,7 +30,7 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew runTests
 
-test:
-  stage: test
-  script:
-    - ./gradlew runTests --stacktrace
+  test:
+    stage: test
+    script:
+      - ./gradlew runTests --stacktrace
