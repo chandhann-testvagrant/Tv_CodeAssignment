@@ -16,7 +16,9 @@ public class executor extends baseTest
     @Test(priority = 1)
     public void validatingSearch() {
         basicActions BA= new basicActions(driver);
-        homePage home_page= BA.getInstance(welcomePage.class)
+        
+       // homePage home_page= BA.getInstance(welcomePage.class)
+        homePage home_page= welcomePage.getInstance(driver)
                 .enterPassword(password);
 
         productPage product_page=home_page.search("Round Neck Shirt 14")

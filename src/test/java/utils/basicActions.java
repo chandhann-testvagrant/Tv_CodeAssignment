@@ -26,7 +26,7 @@ public class basicActions
         wait=new WebDriverWait(this.driver, constants.WebDriverWaitInSec);
     }
     
-    public <TPage extends basicActions> TPage getInstance(Class<TPage> pageClass) {
+    public <TPage > TPage getInstance(Class<TPage> pageClass) {
         try {
             
             return PageFactory.initElements(driver, pageClass);

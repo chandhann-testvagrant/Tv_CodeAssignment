@@ -33,13 +33,19 @@ dependencies {
 
 }
 
-
+sourceSets {
+    test {
+        resources {
+            srcDir "test"
+        }
+    }
+}
 
 
 task runTests(type: Test)  {
 
-    scanForTestClasses = false
-    classpath 'build/classes'
+
+//    classpath = project.sourceSets.test.runtimeClasspath + files("${projectDir}/test")
     outputs.upToDateWhen {false}
 
     useTestNG() {

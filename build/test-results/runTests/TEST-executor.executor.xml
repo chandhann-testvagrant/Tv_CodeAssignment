@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="executor.executor" tests="2" skipped="0" failures="2" errors="0" timestamp="2020-05-18T06:18:34" hostname="Chandhans-MacBook-Pro.local" time="46.182">
+<testsuite name="executor.executor" tests="2" skipped="0" failures="2" errors="0" timestamp="2020-05-18T09:12:40" hostname="Chandhans-MacBook-Pro.local" time="2.793">
   <properties/>
-  <testcase name="validatingSearch" classname="executor.executor" time="6.099">
-    <failure message="java.lang.AssertionError: Result field name contains round neck shirt 14 expected [true] but found [false]" type="java.lang.AssertionError">java.lang.AssertionError: Result field name contains round neck shirt 14 expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:97)
-	at org.testng.Assert.failNotEquals(Assert.java:969)
-	at org.testng.Assert.assertTrue(Assert.java:43)
-	at utils.basicActions.assertTrueWithScreenshot(basicActions.java:81)
-	at pom.homePage.verifySearchResult(homePage.java:65)
-	at executor.executor.validatingSearch(executor.java:21)
+  <testcase name="validatingSearch" classname="executor.executor" time="0.008">
+    <failure message="java.lang.RuntimeException: java.lang.InstantiationException: pom.welcomePage" type="java.lang.RuntimeException">java.lang.RuntimeException: java.lang.InstantiationException: pom.welcomePage
+	at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:131)
+	at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:63)
+	at utils.basicActions.getInstance(basicActions.java:32)
+	at executor.executor.validatingSearch(executor.java:19)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -24,15 +22,22 @@
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.InstantiationException: pom.welcomePage
+	at java.base/java.lang.Class.newInstance(Class.java:571)
+	at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:128)
+	... 18 more
+Caused by: java.lang.NoSuchMethodException: pom.welcomePage.&lt;init&gt;()
+	at java.base/java.lang.Class.getConstructor0(Class.java:3349)
+	at java.base/java.lang.Class.newInstance(Class.java:556)
+	... 19 more
 </failure>
   </testcase>
-  <testcase name="ValidateAddingProductOfDifferentSize" classname="executor.executor" time="40.082">
-    <failure message="org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: /html/body/div[1]/header/div/div/a' (tried for 20 second(s) with 500 milliseconds interval)" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: /html/body/div[1]/header/div/div/a' (tried for 20 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)
-	at utils.basicActions.click(basicActions.java:94)
-	at pom.welcomePage.enterPassword(welcomePage.java:36)
-	at executor.executor.ValidateAddingProductOfDifferentSize(executor.java:38)
+  <testcase name="ValidateAddingProductOfDifferentSize" classname="executor.executor" time="0.003">
+    <failure message="java.lang.RuntimeException: java.lang.InstantiationException: pom.welcomePage" type="java.lang.RuntimeException">java.lang.RuntimeException: java.lang.InstantiationException: pom.welcomePage
+	at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:131)
+	at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:63)
+	at utils.basicActions.getInstance(basicActions.java:32)
+	at executor.executor.ValidateAddingProductOfDifferentSize(executor.java:41)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -48,42 +53,99 @@
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:834)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;/html/body/div[1]/header/div/div/a&quot;}
-  (Session info: headless chrome=81.0.4044.138)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '4.0.0-alpha-1', revision: 'd1d3728cae', time: '2019-04-24T13:42:21'
-System info: host: 'Chandhans-MacBook-Pro.local', ip: 'fe80:0:0:0:10af:1690:9527:dbc6%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.15.4', java.version: '11.0.6'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.138, chrome: {chromedriverVersion: 81.0.4044.138 (8c6c7ba89cc9..., userDataDir: /var/folders/df/5vw8hg3s28v...}, goog:chromeOptions: {debuggerAddress: localhost:56597}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 42c811cadac85b5ae975d3d46c58d96c
-*** Element info: {Using=xpath, value=/html/body/div[1]/header/div/div/a}
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:190)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:124)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:161)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:577)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:328)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:446)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:320)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-	at com.sun.proxy.$Proxy14.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:670)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:666)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:211)
+Caused by: java.lang.InstantiationException: pom.welcomePage
+	at java.base/java.lang.Class.newInstance(Class.java:571)
+	at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:128)
 	... 18 more
+Caused by: java.lang.NoSuchMethodException: pom.welcomePage.&lt;init&gt;()
+	at java.base/java.lang.Class.getConstructor0(Class.java:3349)
+	at java.base/java.lang.Class.newInstance(Class.java:556)
+	... 19 more
 </failure>
   </testcase>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
+  <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+Starting ChromeDriver 81.0.4044.138 (8c6c7ba89cc9453625af54f11fd83179e23450fa-refs/branch-heads/4044@{#999}) on port 15866
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+[1589793156.995][WARNING]: FromSockAddr failed on netmask
+May 18, 2020 2:42:37 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+[1589793159.362][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589793159.465][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589793159.568][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589793159.669][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589793159.771][SEVERE]: Timed out receiving message from renderer: 0.100
+java.lang.RuntimeException: java.lang.InstantiationException: pom.welcomePage
+	at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:131)
+	at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:63)
+	at utils.basicActions.getInstance(basicActions.java:32)
+	at executor.executor.validatingSearch(executor.java:19)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.InstantiationException: pom.welcomePage
+	at java.base/java.lang.Class.newInstance(Class.java:571)
+	at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:128)
+	... 18 more
+Caused by: java.lang.NoSuchMethodException: pom.welcomePage.<init>()
+	at java.base/java.lang.Class.getConstructor0(Class.java:3349)
+	at java.base/java.lang.Class.newInstance(Class.java:556)
+	... 19 more
+Starting ChromeDriver 81.0.4044.138 (8c6c7ba89cc9453625af54f11fd83179e23450fa-refs/branch-heads/4044@{#999}) on port 17558
+Only local connections are allowed.
+Please protect ports used by ChromeDriver and related test frameworks to prevent access by malicious code.
+[1589793160.279][WARNING]: FromSockAddr failed on netmask
+May 18, 2020 2:42:40 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+[1589793162.123][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589793162.224][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589793162.326][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589793162.427][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589793162.529][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589793162.669][SEVERE]: Timed out receiving message from renderer: 0.100
+[1589793162.875][SEVERE]: Timed out receiving message from renderer: 0.100
+java.lang.RuntimeException: java.lang.InstantiationException: pom.welcomePage
+	at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:131)
+	at org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:63)
+	at utils.basicActions.getInstance(basicActions.java:32)
+	at executor.executor.ValidateAddingProductOfDifferentSize(executor.java:41)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.lang.InstantiationException: pom.welcomePage
+	at java.base/java.lang.Class.newInstance(Class.java:571)
+	at org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:128)
+	... 18 more
+Caused by: java.lang.NoSuchMethodException: pom.welcomePage.<init>()
+	at java.base/java.lang.Class.getConstructor0(Class.java:3349)
+	at java.base/java.lang.Class.newInstance(Class.java:556)
+	... 19 more
+]]></system-err>
 </testsuite>

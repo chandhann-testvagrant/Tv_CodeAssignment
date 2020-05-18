@@ -12,7 +12,7 @@
 <body>
 <h1>Gradle test</h1>
 <p>
-  Test duration: 57.855s
+  Test duration: 6.505s
 </p>
 
 
@@ -28,20 +28,19 @@
                   ValidateAddingProductOfDifferentSize
       </td>
   <td class="duration">
-    40.082s
+    0.003s
   </td>
   <td class="result">
         
     
         
 
-        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.xpath: /html/body/div[1]/header/div/div/a&apos; (tried for 20 second(s) with 500 milliseconds interval)</b></a><br />
+        <a href="javascript:toggleElement('exception-0', 'block')" title="Click to expand/collapse"><b>java.lang.RuntimeException: java.lang.InstantiationException: pom.welcomePage</b></a><br />
     <div class="stackTrace" id="exception-0">
-              org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)<br />
-              org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:234)<br />
-              utils.basicActions.click(basicActions.java:94)<br />
-              pom.welcomePage.enterPassword(welcomePage.java:36)<br />
-              executor.executor.ValidateAddingProductOfDifferentSize(executor.java:38)<br />
+              org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:131)<br />
+              org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:63)<br />
+              utils.basicActions.getInstance(basicActions.java:32)<br />
+              executor.executor.ValidateAddingProductOfDifferentSize(executor.java:41)<br />
               java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
               java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
               java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
@@ -57,43 +56,37 @@
               java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)<br />
               java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)<br />
               java.base/java.lang.Thread.run(Thread.java:834)<br />
-                    <b>Caused by: </b> <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;/html/body/div[1]/header/div/div/a&quot;}<br/>
-&nbsp; (Session info: headless chrome=81.0.4044.138)<br/>
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html<br/>
-Build info: version: &apos;4.0.0-alpha-1&apos;, revision: &apos;d1d3728cae&apos;, time: &apos;2019-04-24T13:42:21&apos;<br/>
-System info: host: &apos;Chandhans-MacBook-Pro.local&apos;, ip: &apos;fe80:0:0:0:10af:1690:9527:dbc6%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.4&apos;, java.version: &apos;11.0.6&apos;<br/>
-Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.138, chrome: {chromedriverVersion: 81.0.4044.138 (8c6c7ba89cc9..., userDataDir: /var/folders/df/5vw8hg3s28v...}, goog:chromeOptions: {debuggerAddress: localhost:56597}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}<br/>
-Session ID: 42c811cadac85b5ae975d3d46c58d96c<br/>
-*** Element info: {Using=xpath, value=/html/body/div[1]/header/div/div/a}</a><br />
+                    <b>Caused by: </b> <a href="javascript:toggleElement('exception-1', 'block')" title="Click to expand/collapse">java.lang.InstantiationException: pom.welcomePage</a><br />
         <div class="stackTrace" id="exception-1">
-                      java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br />
-                      java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)<br />
-                      java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
-                      java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)<br />
-                      org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:190)<br />
-                      org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:124)<br />
-                      org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)<br />
-                      org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:161)<br />
-                      org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)<br />
-                      org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:577)<br />
-                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:328)<br />
-                      org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:446)<br />
-                      org.openqa.selenium.By$ByXPath.findElement(By.java:353)<br />
-                      org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:320)<br />
-                      org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)<br />
-                      org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)<br />
-                      com.sun.proxy.$Proxy14.isDisplayed(Unknown Source)<br />
-                      org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)<br />
-                      org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)<br />
-                      org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)<br />
-                      org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)<br />
-                      org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:670)<br />
-                      org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:666)<br />
-                      org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:211)<br />
-                      utils.basicActions.click(basicActions.java:94)<br />
-                      pom.welcomePage.enterPassword(welcomePage.java:36)<br />
-                      executor.executor.ValidateAddingProductOfDifferentSize(executor.java:38)<br />
+                      java.base/java.lang.Class.newInstance(Class.java:571)<br />
+                      org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:128)<br />
+                      org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:63)<br />
+                      utils.basicActions.getInstance(basicActions.java:32)<br />
+                      executor.executor.ValidateAddingProductOfDifferentSize(executor.java:41)<br />
+                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+                      java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+                      java.base/java.lang.reflect.Method.invoke(Method.java:566)<br />
+                      org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)<br />
+                      org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)<br />
+                      org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)<br />
+                      org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)<br />
+                      org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)<br />
+                      org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)<br />
+                      org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)<br />
+                      org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)<br />
+                      java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)<br />
+                      java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)<br />
+                      java.base/java.lang.Thread.run(Thread.java:834)<br />
+                  </div>
+              <b>Caused by: </b> <a href="javascript:toggleElement('exception-2', 'block')" title="Click to expand/collapse">java.lang.NoSuchMethodException: pom.welcomePage.&lt;init&gt;()</a><br />
+        <div class="stackTrace" id="exception-2">
+                      java.base/java.lang.Class.getConstructor0(Class.java:3349)<br />
+                      java.base/java.lang.Class.newInstance(Class.java:556)<br />
+                      org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:128)<br />
+                      org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:63)<br />
+                      utils.basicActions.getInstance(basicActions.java:32)<br />
+                      executor.executor.ValidateAddingProductOfDifferentSize(executor.java:41)<br />
                       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
                       java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
                       java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
@@ -118,88 +111,19 @@ Session ID: 42c811cadac85b5ae975d3d46c58d96c<br/>
                   validatingSearch
       </td>
   <td class="duration">
-    6.099s
-  </td>
-  <td class="result">
-        
-    
-            <div class="testOutput">
-                        <a href="Result field name contains round neck shirt 14"><p align="left">Error screenshot at Mon May 18 11:48:39 IST 2020</p>
-                                <p><img width="1024" src="/Users/chandhann/IdeaProjects/TV_CodeAssignement/screenshot/Result field name contains round neck shirt 14.png" alt="screenshot at Mon May 18 11:48:39 IST 2020"/></p></a><br />
-                  </div>
-    
-
-        <a href="javascript:toggleElement('exception-2', 'block')" title="Click to expand/collapse"><b>java.lang.AssertionError: Result field name contains round neck shirt 14 expected [true] but found [false]</b></a><br />
-    <div class="stackTrace" id="exception-2">
-              org.testng.Assert.fail(Assert.java:97)<br />
-              org.testng.Assert.failNotEquals(Assert.java:969)<br />
-              org.testng.Assert.assertTrue(Assert.java:43)<br />
-              utils.basicActions.assertTrueWithScreenshot(basicActions.java:81)<br />
-              pom.homePage.verifySearchResult(homePage.java:65)<br />
-              executor.executor.validatingSearch(executor.java:21)<br />
-              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
-              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
-              java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
-              java.base/java.lang.reflect.Method.invoke(Method.java:566)<br />
-              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)<br />
-              org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)<br />
-              org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)<br />
-              org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)<br />
-              org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)<br />
-              org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)<br />
-              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)<br />
-              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)<br />
-              java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)<br />
-              java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)<br />
-              java.base/java.lang.Thread.run(Thread.java:834)<br />
-                </div>
-      </td>
-</tr>
-          <tr>
-        <td colspan="3" class="group">executor.executor1</td>
-      </tr>
-            
-<tr>
-  <td class="method">
-                  ValidateAddingProductOfDifferentSize
-      </td>
-  <td class="duration">
-    1.199s
+    0.008s
   </td>
   <td class="result">
         
     
         
 
-        <a href="javascript:toggleElement('exception-3', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;a href=&quot;#LoginModal&quot; class=&quot;js-modal-open-login-modal link--action btn btn--secondary&quot; aria-haspopup=&quot;dialog&quot;&gt;...&lt;/a&gt; is not clickable at point (646, 42). Other element would receive the click: &lt;div class=&quot;modal__inner&quot;&gt;...&lt;/div&gt;<br/>
-&nbsp; (Session info: headless chrome=81.0.4044.138)<br/>
-Build info: version: &apos;4.0.0-alpha-1&apos;, revision: &apos;d1d3728cae&apos;, time: &apos;2019-04-24T13:42:21&apos;<br/>
-System info: host: &apos;Chandhans-MacBook-Pro.local&apos;, ip: &apos;fe80:0:0:0:10af:1690:9527:dbc6%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.4&apos;, java.version: &apos;11.0.6&apos;<br/>
-Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.138, chrome: {chromedriverVersion: 81.0.4044.138 (8c6c7ba89cc9..., userDataDir: /var/folders/df/5vw8hg3s28v...}, goog:chromeOptions: {debuggerAddress: localhost:56597}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}<br/>
-Session ID: 42c811cadac85b5ae975d3d46c58d96c</b></a><br />
+        <a href="javascript:toggleElement('exception-3', 'block')" title="Click to expand/collapse"><b>java.lang.RuntimeException: java.lang.InstantiationException: pom.welcomePage</b></a><br />
     <div class="stackTrace" id="exception-3">
-              java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br />
-              java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)<br />
-              java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
-              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)<br />
-              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:190)<br />
-              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:124)<br />
-              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)<br />
-              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:161)<br />
-              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:577)<br />
-              org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:308)<br />
-              org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)<br />
-              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
-              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
-              java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
-              java.base/java.lang.reflect.Method.invoke(Method.java:566)<br />
-              org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)<br />
-              com.sun.proxy.$Proxy14.click(Unknown Source)<br />
-              utils.basicActions.click(basicActions.java:95)<br />
-              pom.welcomePage.enterPassword(welcomePage.java:36)<br />
-              executor.executor1.ValidateAddingProductOfDifferentSize(executor1.java:38)<br />
+              org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:131)<br />
+              org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:63)<br />
+              utils.basicActions.getInstance(basicActions.java:32)<br />
+              executor.executor.validatingSearch(executor.java:19)<br />
               java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
               java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
               java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
@@ -215,66 +139,54 @@ Session ID: 42c811cadac85b5ae975d3d46c58d96c</b></a><br />
               java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)<br />
               java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)<br />
               java.base/java.lang.Thread.run(Thread.java:834)<br />
-                </div>
-      </td>
-</tr>
-<tr>
-  <td class="method">
-                  validatingSearch
-      </td>
-  <td class="duration">
-    1.457s
-  </td>
-  <td class="result">
-        
-    
-        
-
-        <a href="javascript:toggleElement('exception-4', 'block')" title="Click to expand/collapse"><b>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;a href=&quot;#LoginModal&quot; class=&quot;js-modal-open-login-modal link--action btn btn--secondary&quot; aria-haspopup=&quot;dialog&quot;&gt;...&lt;/a&gt; is not clickable at point (646, 42). Other element would receive the click: &lt;div class=&quot;modal__inner&quot;&gt;...&lt;/div&gt;<br/>
-&nbsp; (Session info: headless chrome=81.0.4044.138)<br/>
-Build info: version: &apos;4.0.0-alpha-1&apos;, revision: &apos;d1d3728cae&apos;, time: &apos;2019-04-24T13:42:21&apos;<br/>
-System info: host: &apos;Chandhans-MacBook-Pro.local&apos;, ip: &apos;fe80:0:0:0:10af:1690:9527:dbc6%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.15.4&apos;, java.version: &apos;11.0.6&apos;<br/>
-Driver info: org.openqa.selenium.chrome.ChromeDriver<br/>
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 81.0.4044.138, chrome: {chromedriverVersion: 81.0.4044.138 (8c6c7ba89cc9..., userDataDir: /var/folders/df/5vw8hg3s28v...}, goog:chromeOptions: {debuggerAddress: localhost:56597}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}<br/>
-Session ID: 42c811cadac85b5ae975d3d46c58d96c</b></a><br />
-    <div class="stackTrace" id="exception-4">
-              java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)<br />
-              java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)<br />
-              java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)<br />
-              java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)<br />
-              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:190)<br />
-              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:124)<br />
-              org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)<br />
-              org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:161)<br />
-              org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)<br />
-              org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:577)<br />
-              org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:308)<br />
-              org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)<br />
-              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
-              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
-              java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
-              java.base/java.lang.reflect.Method.invoke(Method.java:566)<br />
-              org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)<br />
-              com.sun.proxy.$Proxy14.click(Unknown Source)<br />
-              utils.basicActions.click(basicActions.java:95)<br />
-              pom.welcomePage.enterPassword(welcomePage.java:36)<br />
-              executor.executor1.validatingSearch(executor1.java:18)<br />
-              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
-              java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
-              java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
-              java.base/java.lang.reflect.Method.invoke(Method.java:566)<br />
-              org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)<br />
-              org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)<br />
-              org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)<br />
-              org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)<br />
-              org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)<br />
-              org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)<br />
-              org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)<br />
-              org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)<br />
-              java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)<br />
-              java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)<br />
-              java.base/java.lang.Thread.run(Thread.java:834)<br />
-                </div>
+                    <b>Caused by: </b> <a href="javascript:toggleElement('exception-4', 'block')" title="Click to expand/collapse">java.lang.InstantiationException: pom.welcomePage</a><br />
+        <div class="stackTrace" id="exception-4">
+                      java.base/java.lang.Class.newInstance(Class.java:571)<br />
+                      org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:128)<br />
+                      org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:63)<br />
+                      utils.basicActions.getInstance(basicActions.java:32)<br />
+                      executor.executor.validatingSearch(executor.java:19)<br />
+                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+                      java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+                      java.base/java.lang.reflect.Method.invoke(Method.java:566)<br />
+                      org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)<br />
+                      org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)<br />
+                      org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)<br />
+                      org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)<br />
+                      org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)<br />
+                      org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)<br />
+                      org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)<br />
+                      org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)<br />
+                      java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)<br />
+                      java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)<br />
+                      java.base/java.lang.Thread.run(Thread.java:834)<br />
+                  </div>
+              <b>Caused by: </b> <a href="javascript:toggleElement('exception-5', 'block')" title="Click to expand/collapse">java.lang.NoSuchMethodException: pom.welcomePage.&lt;init&gt;()</a><br />
+        <div class="stackTrace" id="exception-5">
+                      java.base/java.lang.Class.getConstructor0(Class.java:3349)<br />
+                      java.base/java.lang.Class.newInstance(Class.java:556)<br />
+                      org.openqa.selenium.support.PageFactory.instantiatePage(PageFactory.java:128)<br />
+                      org.openqa.selenium.support.PageFactory.initElements(PageFactory.java:63)<br />
+                      utils.basicActions.getInstance(basicActions.java:32)<br />
+                      executor.executor.validatingSearch(executor.java:19)<br />
+                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br />
+                      java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)<br />
+                      java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br />
+                      java.base/java.lang.reflect.Method.invoke(Method.java:566)<br />
+                      org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)<br />
+                      org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)<br />
+                      org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)<br />
+                      org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)<br />
+                      org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)<br />
+                      org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)<br />
+                      org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)<br />
+                      org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)<br />
+                      java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)<br />
+                      java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)<br />
+                      java.base/java.lang.Thread.run(Thread.java:834)<br />
+                  </div>
+          </div>
       </td>
 </tr>
       </table>
