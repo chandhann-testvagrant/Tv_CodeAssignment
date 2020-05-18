@@ -25,9 +25,7 @@ jobs:
 
     - name: Build with Gradle
       run: ./gradlew runTests test --stacktrace
-    - uses: DownloadBuildArtifacts@0
-      output:
-        buildType: 'current'
-        downloadType: 'directory'
-        artifactName: 'report'
-        downloadPath: build/reportng-report
+
+    - publish: build/reportng-report
+      artifact: report
+
