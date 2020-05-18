@@ -14,7 +14,7 @@ stages:
   - test
 
 
-  build:
+build:
     stage: build
     runs-on: windows-latest
 
@@ -29,7 +29,7 @@ stages:
     - name: Build with Gradle
       run: ./gradlew runTests
 
-  test:
+test:
     stage: test
     script:
       - ./gradlew runTests --stacktrace
