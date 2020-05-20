@@ -1,6 +1,7 @@
 package pom;
 
-import model.product;
+import model.Cart;
+import model.Product;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,9 +11,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class homePage extends tabActions
+public class HomePage extends TabActions
 {
-    homePage(WebDriver driver)
+    HomePage(WebDriver driver)
     {
         super(driver);
         PageFactory.initElements(driver,this);
@@ -33,7 +34,7 @@ public class homePage extends tabActions
     private List<WebElement> searchResultLink;
     
     private String searchTerm;
-    public homePage search(String searchTerm)
+    public HomePage search(String searchTerm)
     {
         this.searchTerm=searchTerm;
         tabClickOnSearch();
@@ -43,7 +44,7 @@ public class homePage extends tabActions
     }
     
     
-    public homePage verifySearchResult()
+    public HomePage verifySearchResult()
     {
         reinitializePage(this);
         for(WebElement element: searchResult)
@@ -55,37 +56,38 @@ public class homePage extends tabActions
         
     }
     
-    public productPage openFirstResult()
+    public ProductPage openFirstResult()
     {
         click(searchResultLink.get(0));
-        return new productPage(getDriverInstance());
+        return new ProductPage(getDriverInstance());
     }
     
-    public homePage AddMultipleProducts(List<product> products)
+    public Cart AddMultipleProducts(List<Product> products, Cart cart)
     {
-        for(product product:products)
+        for(Product product:products)
         {
-            search(product.getProductName())
+            ProductPage productPage=search(product.getName())
                     .verifySearchResult()
-                    .openFirstResult()
-                    .addProductToCart(product.getProductSize(),product.getProductColour())
-                    .tabClickOnHome();
+                    .openFirstResult();
+    
+                cart=productPage.addProductToCart(product.getSize(),product.getColor(),cart);
+                productPage.tabClickOnHome();
         }
         
         
-        return this;
+        return cart;
     }
     
-    public homePage scrollToFeaturedCollection()
+    public HomePage scrollToFeaturedCollection()
     {
         scrollTOElement(featuredCollectionField);
         return this;
     }
     
-    public productPage openFirstFeaturedProduct()
+    public ProductPage openFirstFeaturedProduct()
     {
         click(firstProductInFeaturedCollectionField);
-        return new productPage(getDriverInstance());
+        return new ProductPage(getDriverInstance());
     }
     
     

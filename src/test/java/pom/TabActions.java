@@ -4,11 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import utils.basicActions;
+import utils.BasicActions;
 
-public class tabActions extends basicActions
+public class TabActions extends BasicActions
 {
-    public tabActions(WebDriver driver)
+    public TabActions(WebDriver driver)
     {
         super(driver);
         PageFactory.initElements(driver,this);
@@ -26,16 +26,16 @@ public class tabActions extends basicActions
         click(searchButton);
     }
     
-    public cartPage tabClickOnCart()
+    public CartPage tabClickOnCart()
     {
         click(cartButton);
-        return new cartPage(getDriverInstance());
+        return new CartPage(getDriverInstance());
     }
     
-    public homePage tabClickOnHome()
+    public HomePage tabClickOnHome()
     {
         click(homeButton);
-        return  new homePage(getDriverInstance());
+        return  new HomePage(getDriverInstance());
     }
     
    

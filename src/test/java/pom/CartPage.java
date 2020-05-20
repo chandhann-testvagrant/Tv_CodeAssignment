@@ -1,18 +1,20 @@
 package pom;
 
-import model.cart;
-import model.product;
+import model.Cart;
+import model.Product;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
+import utils.TextHelper;
 
+import java.util.Iterator;
 import java.util.List;
 
-public class cartPage extends tabActions
+public class CartPage extends TabActions
 {
-    cartPage(WebDriver driver)
+    CartPage(WebDriver driver)
     {
         super(driver);
         
@@ -28,12 +30,13 @@ public class cartPage extends tabActions
     @FindBys({@FindBy(xpath = "//tr[@class='cart__row']//td[1]//div/a")})    private List<WebElement> nameOfItemList;
    
     
-    public cartPage increaseQuantityOfProductByOne(product product)
+    public CartPage increaseQuantityOfProductByOne(Product product)
     {
         int i=0;
-        for(WebElement name:nameOfItemList)
+        Iterator<WebElement> names = nameOfItemList.iterator();
+        while(names.hasNext())
         {
-            if(getText(name).equalsIgnoreCase(product.getProductName()))
+            if(getText(names.next()).equalsIgnoreCase(product.getName()))
             {
                 int quantity=Integer.valueOf(getValue(quantityOfItemList.get(i)));
                 quantity++;
@@ -48,20 +51,28 @@ public class cartPage extends tabActions
         return this;
     }
     
-    public cartPage verifyProductDetail(product product)
+    public CartPage verifyProductDetail(Product product)
     {
         int i=0;
         for(WebElement name:nameOfItemList)
         {
-            if(getText(name).equalsIgnoreCase(product.getProductName()) && product.getProductColour().equalsIgnoreCase(getText(colourOfItemList.get(i)).replaceAll("Color: ","")) && product.getProductSize().equalsIgnoreCase(getText(sizeOfItemList.get(i)).replaceAll("Size: ","")))
+            String expectedName=product.getName();
+            String expectedColor=product.getColor();
+            String expectedSize=product.getSize();
+            
+            String actualName=getText(name);
+            String actualColor=TextHelper.cleanColor(getText(colourOfItemList.get(i)));
+            String actualSize=TextHelper.cleanSize(getText(sizeOfItemList.get(i)));
+            
+            if(actualName.equalsIgnoreCase(expectedName) && expectedColor.equalsIgnoreCase(actualColor) && expectedSize.equalsIgnoreCase(actualSize))
             {
-                double total=Double.valueOf(getText(totalPriceOfItemList.get(i)).trim().replaceAll("Rs. ","").replaceAll(",",""));
-                double price=Double.valueOf(getText(priceOfItemList.get(i)).trim().replaceAll("Rs. ","").replaceAll(",",""));
-    
+                double total= TextHelper.cleanPrice(getText(totalPriceOfItemList.get(i)));
+                double price=TextHelper.cleanPrice(getText(priceOfItemList.get(i)));
+                
                 Double expectedTotal=Integer.valueOf(getValue(quantityOfItemList.get(i)))*price;
                 assertWithScreenshot(expectedTotal+"",total+"","Verifying the total field");
                 
-                assertWithScreenshot(product.getProductPrice()+"",Double.valueOf(getText(priceOfItemList.get(i)).trim().replaceAll("Rs. ","").replaceAll(",",""))+"","verification of product price");
+                assertWithScreenshot(product.getPrice()+"",price+"","verification of product price");
                 break;
             }
             else if(i==nameOfItemList.size()-1)
@@ -75,10 +86,10 @@ public class cartPage extends tabActions
         return this;
     }
     
-    public cartPage verifyCart()
+    public CartPage verifyCart(Cart cart)
     {
-        List<product> productslist=cart.getProductsFromCart();
-        for (product product:productslist)
+        List<Product> productslist= cart.getProductsFromCart();
+        for (Product product:productslist)
         {
             verifyProductDetail(product);
         }

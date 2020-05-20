@@ -16,6 +16,7 @@ repositories {
 
 dependencies {
     testCompile group: 'org.uncommons', name: 'reportng', version: '1.1.4'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.11.0.rc1'
     // https://mvnrepository.com/artifact/org.testng/testng
     testCompile group: 'org.testng', name: 'testng', version: '7.1.0'
     // https://mvnrepository.com/artifact/io.appium/java-client
@@ -28,6 +29,10 @@ dependencies {
 // https://mvnrepository.com/artifact/io.qameta.allure/allure-generator
   //  compile "com.aventstack:extentreports-testng-adapter:4.0.0"
  //   implementation 'org.testng:testng:6.9.6'
+
+    // https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple
+    compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+
 
 
 
@@ -44,8 +49,6 @@ sourceSets {
 
 task runTests(type: Test)  {
 
-
-//    classpath = project.sourceSets.test.runtimeClasspath + files("${projectDir}/test")
     outputs.upToDateWhen {false}
 
     useTestNG() {

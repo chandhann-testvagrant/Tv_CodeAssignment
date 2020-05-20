@@ -1,6 +1,6 @@
 package utils;
 
-import generic.constants;
+import generic.Constants;
 import io.github.bonigarcia.wdm.DriverManagerType;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -10,9 +10,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.safari.SafariDriver;
 
-public class driverBuilder {
+public class DriverBuilder {
     private String browser;
-    driverBuilder(String browser){
+    DriverBuilder(String browser){
     this.browser=browser;
     }
     
@@ -24,7 +24,7 @@ public class driverBuilder {
                 WebDriverManager.getInstance(DriverManagerType.CHROME).setup();
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--no-sandbox");
-                if(constants.headlessMode){
+                if(Constants.headlessMode){
                     chromeOptions.addArguments("--headless");
                 }
                 driver = new ChromeDriver(chromeOptions);
@@ -33,7 +33,7 @@ public class driverBuilder {
             case "firefox":
                 WebDriverManager.getInstance(DriverManagerType.FIREFOX).setup();
                 FirefoxOptions options = new FirefoxOptions();
-                if(constants.headlessMode){
+                if(Constants.headlessMode){
                     options.setHeadless(true);
                 }
                 driver = new FirefoxDriver(options);

@@ -6,7 +6,7 @@
 
 
         <classes>
-            <class name = "executor.executor" />
+            <class name = "executor.Executor" />
         </classes>
     </test>
 

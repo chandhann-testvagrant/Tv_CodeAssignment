@@ -1,6 +1,6 @@
 package utils;
 
-import generic.constants;
+import generic.Constants;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -16,14 +16,14 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 
-public class basicActions
+public class BasicActions
 {
     private  WebDriver driver;
     private WebDriverWait wait;
-    public basicActions(WebDriver driver)
+    public BasicActions(WebDriver driver)
     {
         this.driver=driver;
-        wait=new WebDriverWait(this.driver, constants.WebDriverWaitInSec);
+        wait=new WebDriverWait(this.driver, Constants.WebDriverWaitInSec);
     }
     
     public <TPage > TPage getInstance(Class<TPage> pageClass) {
@@ -84,15 +84,14 @@ public class basicActions
     
   
 
-    protected void click(WebElement ele)
+    protected  void click(WebElement ele)
     {
         int attempts = 0;
         while(attempts < 5)
         {
             try
             {
-                wait.until(ExpectedConditions.elementToBeClickable(ele));
-                ele.click();
+                wait.until(ExpectedConditions.elementToBeClickable(ele)).click();
                 break;
             } catch(StaleElementReferenceException e){}
 
@@ -100,13 +99,14 @@ public class basicActions
         }
     }
     
-    protected void selectByVisibleText(WebElement ele,String text)
+    protected  void selectByVisibleText(WebElement ele,String text)
     {
         int attempts = 0;
         while(attempts < 5)
         {
             try
             {
+               
                 wait.until(ExpectedConditions.elementToBeClickable(ele));
                 new Select(ele).selectByVisibleText(text);
                 break;
@@ -263,7 +263,7 @@ public class basicActions
         return sessionid;
     
     }
-    protected <T extends basicActions> void reinitializePage(T obj)
+    protected <T extends BasicActions> void reinitializePage(T obj)
     {
         
         PageFactory.initElements(getDriverInstance(),obj);
